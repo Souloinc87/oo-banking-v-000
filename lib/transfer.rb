@@ -19,7 +19,8 @@ class Transfer
      @sender.balance -= @amount
      @receiver.balance += @amount
      @status = "complete"
-  elsif @sender.valid? == false && @status != "pending"
+  else
+    @sender.valid? == false && @status != "pending"
      "Transaction rejected. Please check your account balance. "
      @status = "rejected"
     end
